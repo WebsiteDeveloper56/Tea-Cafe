@@ -1,0 +1,2473 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Cafe | Tea & Chai in Karachi</title>
+    <meta name="description" content="Tea Cafe in Karachi, Pakistan. Explore tea and chai options and contact us for tea inquiries.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Tea Cafe | Tea & Chai in Karachi">
+    <meta property="og:description" content="Explore authentic Pakistani tea, karak chai, doodh patti, and more at Tea Cafe in Karachi, Pakistan.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --bg-primary: #120e0b;
+            --bg-secondary: #1a1410;
+            --bg-card: #231b15;
+            --bg-card-hover: #2d231c;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --accent-amber: #e67e22;
+            --text-main: #f5f2eb;
+            --text-muted: #b8b0a5;
+            --text-dark: #120e0b;
+            --border-color: rgba(212, 175, 55, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .section-title span {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.75rem;
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Steam Animation CSS */
+        @keyframes steam {
+            0% {
+                transform: translateY(0) scaleX(1);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-40px) scaleX(2.5);
+                opacity: 0;
+            }
+        }
+
+        .steam-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .steam {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            width: 6px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.4);
+            filter: blur(5px);
+            border-radius: 50%;
+            animation: steam 3s infinite linear;
+            pointer-events: none;
+        }
+
+        .steam:nth-child(2) {
+            left: 40%;
+            animation-delay: 1s;
+            animation-duration: 2.5s;
+        }
+
+        .steam:nth-child(3) {
+            left: 60%;
+            animation-delay: 1.8s;
+            animation-duration: 3.2s;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+            padding: 1.5rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(18, 14, 11, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-brand span {
+            color: var(--accent-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 8rem;
+            background: linear-gradient(to right, var(--bg-primary) 50%, rgba(18, 14, 11, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at left, rgba(18,14,11,0.95) 0%, rgba(18,14,11,0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.75rem;
+            line-height: 1.15;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--bg-secondary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            min-height: 450px;
+            transition: var(--transition);
+        }
+
+        .about-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-content h2 span {
+            color: var(--accent-gold);
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-card);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-feature-item i {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+        }
+
+        .about-feature-item span {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Tea Menu Section */
+        .menu-section {
+            background-color: var(--bg-primary);
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .menu-filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.6rem 1.25rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .menu-filter-btn:hover, .menu-filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+            border-color: var(--accent-gold);
+        }
+
+        .tea-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .tea-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tea-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-gold);
+            background: var(--bg-card-hover);
+        }
+
+        .tea-card-img {
+            height: 240px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .tea-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .tea-card:hover .tea-card-img img {
+            transform: scale(1.05);
+        }
+
+        .tea-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(18, 14, 11, 0.85);
+            backdrop-filter: blur(5px);
+            color: var(--accent-gold);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
+
+        .tea-card-content {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .tea-card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .tea-card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tea-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .tea-inquire-link {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .tea-inquire-link:hover {
+            color: var(--accent-amber);
+            gap: 0.75rem;
+        }
+
+        /* Tea Experience Section */
+        .experience {
+            background-color: var(--bg-secondary);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--bg-card);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-gold);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .experience-card:hover::before {
+            opacity: 1;
+        }
+
+        .experience-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .experience-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Tea Preparation Section */
+        .preparation {
+            background-color: var(--bg-primary);
+        }
+
+        .prep-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .prep-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .prep-step-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .prep-number {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-amber));
+            color: var(--text-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .prep-text h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.35rem;
+            color: var(--text-main);
+        }
+
+        .prep-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .prep-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-card);
+        }
+
+        .prep-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 450px;
+            display: block;
+        }
+
+        /* Tea Types Showcase Section */
+        .tea-types {
+            background-color: var(--bg-secondary);
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .type-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-card);
+        }
+
+        .type-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-gold);
+        }
+
+        .type-img {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .type-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .type-card:hover .type-img img {
+            transform: scale(1.1);
+        }
+
+        .type-info {
+            padding: 1.5rem;
+        }
+
+        .type-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .type-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--bg-primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 280px;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-card);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 14, 11, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay i {
+            color: var(--accent-gold);
+            font-size: 2rem;
+            transform: scale(0.5);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: scale(1);
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 8, 6, 0.95);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            object-fit: contain;
+        }
+
+        .lightbox-close, .lightbox-prev, .lightbox-next {
+            position: absolute;
+            background: rgba(35, 27, 21, 0.8);
+            color: var(--accent-gold);
+            border: 1px solid var(--border-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            z-index: 2010;
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 20px;
+        }
+
+        .lightbox-prev {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+        }
+
+        /* Tea Moment CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(18, 14, 11, 0.9), rgba(18, 14, 11, 0.9)),
+                        url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Why Tea Cafe Section */
+        .why-us {
+            background-color: var(--bg-secondary);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .why-card i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Location Section */
+        .location-section {
+            background-color: var(--bg-primary);
+            text-align: center;
+        }
+
+        .location-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-card);
+        }
+
+        .location-box i {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .location-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-box p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Contact Section (ZERO IMAGES) */
+        .contact {
+            background-color: var(--bg-secondary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-card {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info-card p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-details-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .contact-detail-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-detail-text h4 {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-detail-text p, .contact-detail-text a {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-buttons-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-form-card {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form-card h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-card > p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.9rem 1.25rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-error {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .form-group.error .form-control {
+            border-color: #ff6b6b;
+        }
+
+        .form-group.error .form-error {
+            display: block;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-primary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        .faq-question i {
+            color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-gold);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.25rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 5rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            max-width: 350px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-contact i {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: var(--bg-card);
+            color: var(--accent-gold);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-gold);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid, .prep-grid, .contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-image-wrapper img, .prep-image-container img {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+                border-left: 1px solid var(--border-color);
+                z-index: 1001;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-actions {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 5rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 2.25rem;
+            }
+
+            .tea-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-card, .contact-info-card, .location-box {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title h2 {
+                font-size: 1.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-brand">
+                <i class="fa-solid fa-mug-hot" style="color: var(--accent-gold);"></i> Tea <span>Cafe</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#tea" class="nav-link">Tea</a>
+                <a href="#experience" class="nav-link">Tea Experience</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/923278080555" target="_blank" class="btn btn-whatsapp" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-leaf"></i> Authentic Pakistani Chai & Tea House
+                </div>
+                <h1>Tea Cafe — <span>A Better Way to Enjoy Tea</span></h1>
+                <p>Experience the timeless warmth, rich aroma, and exquisite flavor of traditionally brewed Pakistani tea. Every cup is a celebration of pure comfort and heritage.</p>
+                
+                <div class="hero-buttons">
+                    <a href="https://wa.me/923278080555" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                    <a href="tel:03278080555" class="btn btn-primary">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
+                    <a href="#tea" class="btn btn-outline">
+                        Explore Tea <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="steam-container" style="width: 100%; height: 100%;">
+                        <div class="steam"></div>
+                        <div class="steam"></div>
+                        <div class="steam"></div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Authentic Pakistani Chai preparation and serving" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <div class="section-title" style="text-align: left; margin: 0 0 1.5rem 0;">
+                        <span>Our Heritage</span>
+                        <h2>About <span>Tea Cafe</span></h2>
+                    </div>
+                    <p>At Tea Cafe, we celebrate the deep-rooted chai culture of Pakistan, bringing you an uncompromised devotion to tea preparation and serving. We believe that a great cup of tea is more than a beverage; it's a warm moment of connection and comfort.</p>
+                    <p>From the robust strength of Karak Chai to the soothing aroma of Cardamom-infused Elaichi Chai and the delicate notes of traditional Green Tea, our focus remains strictly and exclusively dedicated to perfecting the art of tea.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-mug-hot"></i>
+                            <span>Rich Tea Aroma</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                            <span>Freshly Brewed</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-seedling"></i>
+                            <span>Quality Tea Leaves</span>
+                        </div>
+                        <div class="about-feature-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Warm Chai Moments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tea Menu Section -->
+    <section class="menu-section" id="tea">
+        <div class="container">
+            <div class="section-title">
+                <span>Our Collections</span>
+                <h2>Premium Tea Showcase</h2>
+                <p>Explore our carefully curated selection of traditional and contemporary tea categories, each prepared to absolute perfection.</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="menu-filter-btn active" data-filter="all">All Teas</button>
+                <button class="menu-filter-btn" data-filter="doodh-patti">Doodh Patti</button>
+                <button class="menu-filter-btn" data-filter="karak-chai">Karak Chai</button>
+                <button class="menu-filter-btn" data-filter="masala-chai">Masala Chai</button>
+                <button class="menu-filter-btn" data-filter="kashmiri-chai">Kashmiri Chai</button>
+                <button class="menu-filter-btn" data-filter="green-tea">Green Tea</button>
+                <button class="menu-filter-btn" data-filter="black-tea">Black Tea</button>
+                <button class="menu-filter-btn" data-filter="elaichi-chai">Elaichi Chai</button>
+                <button class="menu-filter-btn" data-filter="ginger-tea">Ginger Tea</button>
+                <button class="menu-filter-btn" data-filter="lemon-tea">Lemon Tea</button>
+            </div>
+
+            <div class="tea-grid" id="teaGrid">
+                <!-- Doodh Patti -->
+                <div class="tea-card" data-category="doodh-patti">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Signature</span>
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Classic Pakistani Doodh Patti tea served in cup" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Doodh Patti</h3>
+                        <p>Rich and creamy milk tea brewed directly with loose tea leaves without water for a deeply satisfying, velvety texture.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Doodh Patti')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karak Chai -->
+                <div class="tea-card" data-category="karak-chai">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Strong & Bold</span>
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Strong Karak Chai poured steaming into a cup" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Karak Chai</h3>
+                        <p>Strong, robust, and expertly simmered tea designed for true chai lovers looking for an energizing kick.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Karak Chai')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masala Chai -->
+                <div class="tea-card" data-category="masala-chai">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Aromatic</span>
+                        <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80" alt="Spiced Masala Chai with aromatic spices and tea leaves" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Masala Chai</h3>
+                        <p>A heartwarming blend of premium tea leaves infused with traditional aromatic whole spices for a fragrant experience.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Masala Chai')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kashmiri Chai -->
+                <div class="tea-card" data-category="kashmiri-chai">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Pink Tea</span>
+                        <img src="https://media.istockphoto.com/id/2113911552/photo/closeup-shot-of-kashmiri-chai-tea-poured-in-a-glass-cup-alongside-doodh-patti-chai-milk-tea.webp?a=1&b=1&s=612x612&w=0&k=20&c=5VBvNcONhLe1q_-OX7qZ1gswYrldKQw0i-KmF3Hhxlo=" alt="Traditional Kashmiri Pink Chai garnished with nuts" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Kashmiri Chai</h3>
+                        <p>Traditional pink tea prepared with specialized green tea leaves, milk, and garnished with crushed almonds and pistachios.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Kashmiri Chai')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Green Tea -->
+                <div class="tea-card" data-category="green-tea">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Soothing</span>
+                        <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=600&q=80" alt="Clear Green Tea in a glass cup with fresh leaves" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Green Tea</h3>
+                        <p>Light, pure, and refreshing green tea infusion known for its soothing qualities and clean, natural flavor.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Green Tea')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Tea -->
+                <div class="tea-card" data-category="black-tea">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Classic</span>
+                        <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=600&q=80" alt="Clear amber Black Tea served in a glass" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Black Tea</h3>
+                        <p>Rich amber-hued black tea brewed to perfection, offering a clean, bold, and timeless flavor profile.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Black Tea')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elaichi Chai -->
+                <div class="tea-card" data-category="elaichi-chai">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Fragrant</span>
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Cardamom Elaichi Chai steaming in a tea cup" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Elaichi Chai</h3>
+                        <p>Fragrant cardamom-infused chai offering a delightful sweet aroma and soothing flavor in every sip.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Other Tea Inquiry')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ginger Tea -->
+                <div class="tea-card" data-category="ginger-tea">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Refreshing</span>
+                        <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80" alt="Ginger tea infused with fresh ginger root" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Ginger Tea</h3>
+                        <p>Warm and invigorating tea infused with fresh ginger root, perfect for a refreshing and revitalizing boost.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Other Tea Inquiry')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lemon Tea -->
+                <div class="tea-card" data-category="lemon-tea">
+                    <div class="tea-card-img">
+                        <span class="tea-badge">Citrus</span>
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Lemon tea with a slice of fresh lemon" loading="lazy">
+                    </div>
+                    <div class="tea-card-content">
+                        <h3>Lemon Tea</h3>
+                        <p>Light citrusy tea brewed with a refreshing hint of fresh lemon for a crisp and clarifying taste.</p>
+                        <div class="tea-card-footer">
+                            <a href="#contact" class="tea-inquire-link" onclick="selectTeaType('Other Tea Inquiry')">
+                                Inquire About Tea <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tea Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <span>The Essence</span>
+                <h2>Made for Tea Lovers</h2>
+                <p>Discover what makes every visit to Tea Cafe a deeply satisfying ritual dedicated entirely to the love of chai.</p>
+            </div>
+
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3>Rich Tea Aroma</h3>
+                    <p>Envelop your senses in the deep, inviting fragrance of freshly crushed tea leaves and simmering spices.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3>Warm Chai Moments</h3>
+                    <p>Create lasting memories over steaming cups of tea with friends, family, and fellow tea enthusiasts.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-mug-saucer"></i>
+                    </div>
+                    <h3>Traditional Tea Culture</h3>
+                    <p>Embrace the authentic heritage of Pakistani tea culture served with warmth and genuine hospitality.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3>Carefully Prepared Tea</h3>
+                    <p>Every brew is patiently simmered to achieve the ideal balance of strength, milk, and flavor.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>Beautiful Tea Presentation</h3>
+                    <p>Served in traditional cups, teapots, and presentation styles that honor the dignity of great tea.</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-icon">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3>Relaxed Tea Experience</h3>
+                    <p>Unwind in a serene, welcoming environment designed strictly for enjoying your favorite brew in peace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tea Preparation Section -->
+    <section class="preparation">
+        <div class="container">
+            <div class="prep-grid">
+                <div class="prep-steps">
+                    <div class="section-title" style="text-align: left; margin: 0 0 1.5rem 0;">
+                        <span>The Ritual</span>
+                        <h2>The Tea Experience</h2>
+                        <p>Our simple yet meticulous approach to crafting your perfect cup of tea.</p>
+                    </div>
+
+                    <div class="prep-step-item">
+                        <div class="prep-number">1</div>
+                        <div class="prep-text">
+                            <h3>Select Your Tea</h3>
+                            <p>Choose from our extensive variety of traditional chais, green teas, and specialty infusions.</p>
+                        </div>
+                    </div>
+
+                    <div class="prep-step-item">
+                        <div class="prep-number">2</div>
+                        <div class="prep-text">
+                            <h3>Prepare the Tea</h3>
+                            <p>Patiently simmered with quality ingredients to release the rich natural flavors and oils.</p>
+                        </div>
+                    </div>
+
+                    <div class="prep-step-item">
+                        <div class="prep-number">3</div>
+                        <div class="prep-text">
+                            <h3>Serve Fresh</h3>
+                            <p>Served piping hot in traditional tea ware to preserve optimum temperature and aroma.</p>
+                        </div>
+                    </div>
+
+                    <div class="prep-step-item">
+                        <div class="prep-number">4</div>
+                        <div class="prep-text">
+                            <h3>Enjoy the Moment</h3>
+                            <p>Savor every single sip in a tranquil atmosphere dedicated to pure tea appreciation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prep-image-container">
+                    <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80" alt="Tea preparation process with tea leaves and pot" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tea Types Section -->
+    <section class="tea-types">
+        <div class="container">
+            <div class="section-title">
+                <span>Varieties</span>
+                <h2>Explore Tea Styles</h2>
+                <p>A glimpse into our signature tea profiles crafted for discerning tea lovers.</p>
+            </div>
+
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-img">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=500&q=80" alt="Traditional Chai" loading="lazy">
+                    </div>
+                    <div class="type-info">
+                        <h3>Traditional Chai</h3>
+                        <p>Classic Pakistani milk chai brewed to comforting perfection.</p>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-img">
+                        <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=500&q=80" alt="Karak Tea" loading="lazy">
+                    </div>
+                    <div class="type-info">
+                        <h3>Karak Tea</h3>
+                        <p>Strong, full-bodied, and intensely satisfying brew.</p>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-img">
+                        <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=500&q=80" alt="Green Tea" loading="lazy">
+                    </div>
+                    <div class="type-info">
+                        <h3>Green Tea</h3>
+                        <p>Light, clean, and soothing botanical infusion.</p>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-img">
+                        <img src="https://media.istockphoto.com/id/530238567/photo/pink-masala-chai.webp?a=1&b=1&s=612x612&w=0&k=20&c=cJ6h6eOK72j3_GBOSl5BXGUx1IIKXk4w7IVAd9mB9Eo=" alt="Kashmiri Tea" loading="lazy">
+                    </div>
+                    <div class="type-info">
+                        <h3>Kashmiri Tea</h3>
+                        <p>Exquisite pink tea garnished with nuts and spices.</p>
+                    </div>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-img">
+                        <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=500&q=80" alt="Masala Tea" loading="lazy">
+                    </div>
+                    <div class="type-info">
+                        <h3>Masala Tea</h3>
+                        <p>Spiced tea infused with aromatic warming spices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tea Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <span>Visual Journey</span>
+                <h2>Tea Gallery</h2>
+                <p>Immerse yourself in moments of tea pouring, brewing, and serene tea presentations.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" alt="Chai cups and teapot presentation" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Tea pouring into cup" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80" alt="Fresh tea leaves and brewing equipment" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+             
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=600&q=80" alt="Green tea cup preparation" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=600&q=80" alt="Karak chai kettle presentation" loading="lazy">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-prev" onclick="changeSlide(-1)" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-next" onclick="changeSlide(1)" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Enlarged tea view">
+        </div>
+    </div>
+
+    <!-- Tea Moment CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-container">
+            <h2>Your Perfect Tea Moment Awaits</h2>
+            <p>Connect with us today for inquiries, tea gatherings, or to experience the finest Pakistani chai in Karachi.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/923278080555" target="_blank" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                </a>
+                <a href="tel:03278080555" class="btn btn-primary">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Tea Cafe Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <span>Distinction</span>
+                <h2>Why Tea Cafe</h2>
+                <p>Our commitment to excellence in every single aspect of the tea experience.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <h3>Tea-Focused Experience</h3>
+                    <p>An environment completely dedicated to celebrating tea without distractions or unrelated foods.</p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fa-solid fa-list-ul"></i>
+                    <h3>Variety of Tea Styles</h3>
+                    <p>From Doodh Patti to Kashmiri Chai and Green Tea, explore a diverse menu of handcrafted brews.</p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fa-solid fa-mug-saucer"></i>
+                    <h3>Traditional Chai Choices</h3>
+                    <p>Authentic recipes brewed with care to capture the true essence of Pakistani tea culture.</p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <h3>Beautiful Tea Presentation</h3>
+                    <p>Every serving is presented with elegance in traditional tea ware and cups.</p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <h3>Easy WhatsApp Contact</h3>
+                    <p>Quickly reach out and send tea inquiries directly through convenient messaging channels.</p>
+                </div>
+
+                <div class="why-card">
+                    <i class="fa-solid fa-seedling"></i>
+                    <h3>Tea for Everyday Moments</h3>
+                    <p>Whether for morning invigoration or evening relaxation, your ideal tea is always ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Our Location</h3>
+                <p>Karachi, Pakistan</p>
+                <a href="https://wa.me/923278080555" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Inquire via WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (ZERO IMAGES) -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <span>Get in Touch</span>
+                <h2>Contact Tea Cafe</h2>
+                <p>Reach out to us via phone, WhatsApp, or send us your tea inquiry using the form below.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info (ZERO IMAGES) -->
+                <div class="contact-info-card">
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p>Feel free to reach out through any of our official channels for inquiries about our tea selections.</p>
+                        
+                        <div class="contact-details-list">
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <i class="fa-solid fa-shop"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <h4>Business Name</h4>
+                                    <p>Tea Cafe</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <h4>Phone Number</h4>
+                                    <p><a href="tel:03278080555">03278080555</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <h4>WhatsApp</h4>
+                                    <p><a href="https://wa.me/923278080555" target="_blank">03278080555</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="contact-detail-text">
+                                    <h4>Location</h4>
+                                    <p>Karachi, Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons-row">
+                        <a href="tel:03278080555" class="btn btn-primary" style="flex: 1;">
+                            <i class="fa-solid fa-phone"></i> Call Now
+                        </a>
+                        <a href="https://wa.me/923278080555" target="_blank" class="btn btn-whatsapp" style="flex: 1;">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form (ZERO IMAGES) -->
+                <div class="contact-form-card">
+                    <h3>Tea Inquiry Form</h3>
+                    <p>Send your tea requirements or questions directly to our WhatsApp number.</p>
+
+                    <form id="teaInquiryForm" novalidate>
+                        <div class="form-group" id="nameGroup">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                            <div class="form-error">Please enter your name.</div>
+                        </div>
+
+                        <div class="form-group" id="phoneGroup">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                            <div class="form-error">Please enter your phone number.</div>
+                        </div>
+
+                        <div class="form-group" id="teaTypeGroup">
+                            <label for="teaType">Tea Type *</label>
+                            <select id="teaType" class="form-control">
+                                <option value="" disabled selected>Select tea type</option>
+                                <option value="Doodh Patti">Doodh Patti</option>
+                                <option value="Karak Chai">Karak Chai</option>
+                                <option value="Masala Chai">Masala Chai</option>
+                                <option value="Kashmiri Chai">Kashmiri Chai</option>
+                                <option value="Green Tea">Green Tea</option>
+                                <option value="Black Tea">Black Tea</option>
+                                <option value="Other Tea Inquiry">Other Tea Inquiry</option>
+                            </select>
+                            <div class="form-error">Please select a tea type.</div>
+                        </div>
+
+                        <div class="form-group" id="requirementGroup">
+                            <label for="requirement">Quantity / Requirement *</label>
+                            <input type="text" id="requirement" class="form-control" placeholder="e.g. 2 Cups, Family Gathering, Bulk order">
+                            <div class="form-error">Please specify quantity or requirement.</div>
+                        </div>
+
+                        <div class="form-group" id="messageGroup">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" placeholder="Write any specific tea instructions or questions..."></textarea>
+                            <div class="form-error">Please enter your message.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-whatsapp" style="width: 100%;">
+                            <i class="fa-brands fa-whatsapp"></i> Send Inquiry via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <span>Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common inquiries regarding our tea services and contact methods.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What types of tea can I inquire about?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can inquire about a wide range of traditional and specialty chais including Doodh Patti, Karak Chai, Masala Chai, Kashmiri Chai, Green Tea, Black Tea, and more.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I contact Tea Cafe?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can easily contact Tea Cafe by calling us directly at 03278080555 or messaging us instantly on WhatsApp at the same number.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I send a tea inquiry through WhatsApp?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Our website features an integrated inquiry form that automatically compiles your details and opens WhatsApp directly to send your message to Tea Cafe.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Where is Tea Cafe located?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tea Cafe is located in Karachi, Pakistan. You can contact us for precise directions or visit us for a wonderful tea experience.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I inquire about a specific tea type?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Certainly. You can select your preferred tea type from our menu or inquiry form and submit your customized requirement directly to our team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="nav-brand" style="font-size: 1.75rem;">
+                        <i class="fa-solid fa-mug-hot" style="color: var(--accent-gold);"></i> Tea <span>Cafe</span>
+                    </a>
+                    <p>A premier tea house in Karachi, Pakistan, dedicated entirely to the rich culture, aroma, and warmth of authentic Pakistani chai and tea varieties.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tea">Tea Menu</a></li>
+                        <li><a href="#experience">Tea Experience</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fa-solid fa-shop"></i> Tea Cafe</p>
+                    <p><i class="fa-solid fa-phone"></i> <a href="tel:03278080555">03278080555</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/923278080555" target="_blank">03278080555</a></p>
+                    <p><i class="fa-solid fa-location-dot"></i> Karachi, Pakistan</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Tea Cafe, Karachi, Pakistan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Dynamic Current Year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Active Navigation State on Scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Tea Menu Filtering
+        const filterBtns = document.querySelectorAll('.menu-filter-btn');
+        const teaCards = document.querySelectorAll('.tea-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                teaCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Quick Tea Select helper
+        function selectTeaType(teaName) {
+            const selectElem = document.getElementById('teaType');
+            for (let i = 0; i < selectElem.options.length; i++) {
+                if (selectElem.options[i].value === teaName) {
+                    selectElem.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Gallery Lightbox Functionality
+        const galleryImages = [
+            "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=1200&q=80"
+        ];
+
+        let currentImageIndex = 0;
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = galleryImages[currentImageIndex];
+            lightboxModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeSlide(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex >= galleryImages.length) {
+                currentImageIndex = 0;
+            } else if (currentImageIndex < 0) {
+                currentImageIndex = galleryImages.length - 1;
+            }
+            lightboxImg.src = galleryImages[currentImageIndex];
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+
+        // Close lightbox when clicking outside image
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                closeLightbox();
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Contact Form Validation & WhatsApp Inquiry Generator
+        const form = document.getElementById('teaInquiryForm');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const teaTypeInput = document.getElementById('teaType');
+            const requirementInput = document.getElementById('requirement');
+            const messageInput = document.getElementById('message');
+
+            let isValid = true;
+
+            // Validate Name
+            if (!nameInput.value.trim()) {
+                document.getElementById('nameGroup').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('nameGroup').classList.remove('error');
+            }
+
+            // Validate Phone
+            if (!phoneInput.value.trim()) {
+                document.getElementById('phoneGroup').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('phoneGroup').classList.remove('error');
+            }
+
+            // Validate Tea Type
+            if (!teaTypeInput.value) {
+                document.getElementById('teaTypeGroup').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('teaTypeGroup').classList.remove('error');
+            }
+
+            // Validate Requirement
+            if (!requirementInput.value.trim()) {
+                document.getElementById('requirementGroup').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('requirementGroup').classList.remove('error');
+            }
+
+            // Validate Message
+            if (!messageInput.value.trim()) {
+                document.getElementById('messageGroup').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('messageGroup').classList.remove('error');
+            }
+
+            if (isValid) {
+                const name = nameInput.value.trim();
+                const phone = phoneInput.value.trim();
+                const teaType = teaTypeInput.value;
+                const requirement = requirementInput.value.trim();
+                const message = messageInput.value.trim();
+
+                const whatsappMessage = `Assalam o Alaikum Tea Cafe,\nName: ${name}\nPhone: ${phone}\nTea Type: ${teaType}\nQuantity / Requirement: ${requirement}\nMessage: ${message}`;
+                
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                const whatsappUrl = `https://wa.me/923278080555?text=${encodedMessage}`;
+
+                window.open(whatsappUrl, '_blank');
+            }
+        });
+    </script>
+</body>
+</html>
